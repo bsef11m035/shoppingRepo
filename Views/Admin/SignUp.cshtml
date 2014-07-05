@@ -1,0 +1,137 @@
+﻿@{
+ 
+   @model Shoping.Models.Customer
+    //ViewBag.Title = "SignUp";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    
+}
+
+<h2></h2>
+
+<br />
+
+<div class="container">
+			<!-- freshdesignweb top bar -->
+          
+			      
+      <div  class="form">
+    		<form id="contactform"> 
+    			@*<p class="contact"><label for="name">Name</label></p> 
+    			<input id="name" name="name" required="" tabindex="1" type="text">*@ 
+    			  <label for="firstName">First Name:</label>
+                   @Html.TextBoxFor(m=> m.FName)
+    			<p class="contact">@*<label for="email">Email</label></p> 
+    			<input id="email" name="email"   type="email"> *@
+                
+                      <label for="lastName">Last Name:</label>
+                    @Html.TextBoxFor(m=> m.LName)
+
+
+               @* <p class="contact"><label for="username">Create a username</label></p> 
+    			<input id="username" name="username"   tabindex="2" type="text"> *@
+
+                     <label for="email">Email:</label>
+    @Html.TextBoxFor(m=> m.Address)
+
+                    <input id="Submit2" type="button" value="check"  /><br/>
+    			 
+                @*<p class="contact"><label for="password">Create a password</label></p> 
+    			<input type="password" id="password" name="password" > 
+                <p class="contact"><label for="repassword">Confirm your password</label></p> 
+    			<input type="password" id="repassword" name="repassword" required=""> *@
+        <label for="email">Password:</label>
+     @Html.TextBox("Password1")
+    <label for="email">COnfurm Password:</label>
+    @Html.TextBox("Password2")
+              
+  <input id="Submit1" type="submit" value="submit" />
+           
+           @* <input *@@*class="buttom"*@ @*name="submit1"*@ @*id="submit1"*@ @*tabindex="6"*@ @*value="Sign me up!" type="button"> 	 *@
+   </form> 
+</div>      
+</div>
+@*<form action="/Admin/Submit" method="post">*@
+@*@using(Html.BeginForm("Submit", "Admin", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    
+    <label for="firstName">First Name:</label>
+    @Html.TextBoxFor(m=> m.FName)
+     @Html.ValidationMessageFor(m => m.FName)
+     <br />
+    <label for="lastName">Last Name:</label>
+    @Html.TextBoxFor(m=> m.LName)
+     @Html.ValidationMessageFor(m => m.LName)
+    <br />
+    <label for="email">Email:</label>
+    @Html.TextBoxFor(m=> m.Address)
+     @Html.ValidationMessageFor(m => m.Address)
+   @* First Name<input id="Text1" type="text" /><br>*@
+    @*Last Name<input id="Text2" type="text" /><br>*@
+   @* Email<input id="Text3" type="text" />*@
+    @*@<input id="Submit2" type="button" value="check"  /><br/>*@
+    @*<label for="email">Password:</label>
+     @Html.TextBox("Password1")
+    <label for="email">COnfurm Password:</label>
+    @Html.TextBox("Password2")
+    //Password <input id="Password1" type="password" />
+    //<br />
+    //Confirm Password<input id="Password2" type="password" />
+    <input id="Submit1" type="submit" value="submit" />
+    }*@
+@*</form>*@
+<script>
+    
+    $(document).ready(function () {
+
+        
+        $('#Submit2').click(function () {
+
+            var userName = $('#Address').val();
+            
+
+            $.getJSON("/Admin/isAvailable?UserName=" + userName, function (data) {
+                if (data) {
+                    alert("User Name =" + userName);
+                    
+
+                }
+                else {
+                    alert("No User Name =" + userName);
+
+                }
+            });
+
+        });
+
+
+       
+
+
+
+
+    });
+
+   
+    </script>
+<script> $('#Submit1').click(function () {
+     
+     var userName = $('#Address').val();
+
+
+     $.getJSON("/Admin/isAvailable?UserName=" + userName, function (data) {
+         if (data) {
+
+             alert("User Name already exist :" + userName);
+
+
+         }
+         else {
+             alert(" User creaded =" + userName);
+
+         }
+     });
+
+ });</script>

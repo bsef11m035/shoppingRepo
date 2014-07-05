@@ -1,0 +1,83 @@
+﻿@{
+    
+    var a = Session["session"];
+    
+    //if (Session["session"] != null)
+    //{
+    //    Layout = "~/Views/Shared/_Layout.cshtml";        
+    //}
+}
+
+<h2></h2>
+ <div>
+        <div class="col-sm-2">
+          <ul id="sidebar" class="sidebar-nav affix">
+            <li><a href="#" >Categories</a></li>
+            <li><a href="#">Shirts</a></li>
+            <li><a href="#">Pants</a></li>
+            <li><a href="#">Accessories</a></li>
+            <li><a href="#">Shoes</a></li>
+            <li><a href="#">Jackets</a></li>
+              <li><a href="#" onclick="fun()">upload</a></li>
+        </ul>
+      </div>
+  
+ <div class="col-md-9">     
+    @* <div class="container">*@
+  	@*<div class="row">
+          <div id="myCarousel" class="carousel slide">
+                    <!-- Carousel slides -->
+                    <div class="carousel-inner" width="100%" height="100%">
+                        <div class="active item">
+                            <img alt="" src="~/img/HP-slider-Boat-Shoes.jpg" 
+                                style="width: 1000px; height: 350px;" />
+                           
+                        </div>
+                        <div class="item">
+                            <img alt="" src="~/img/slider-hentsch-man.png" 
+                                style="width: 1000px; height: 350px;" />
+                        </div>
+                        <div class="item">
+                            <img alt="" src="~/img/clare-josh-portfolio-web-52.jpg" 
+                                style="width: 1000px;
+                                height: 350px;" />
+                        </div>
+                    </div>
+                    <!-- Carousel navigation -->
+                    <a class=" left carousel-control" data-slide="prev">‹</a> <a class="right carousel-control " href="#myCarousel" data-slide="next"></a>
+                </div>
+     
+
+      
+    </div>*@
+         <div id="slider">
+            <a href="http://www.menucool.com/javascript-image-slider" target="_blank">
+                <img src="~/img/2012053M_0544.jpg" />
+            </a>
+            @*<img src="~/img/HP-slider-Boat-Shoes.jpg"  />*@
+            <img src="~/img/slider-hentsch-man.png" />
+            <img src="~/img/clare-josh-portfolio-web-52.jpg" />
+            <img src="~/img/414809.jpg"  />
+        </div>
+       
+    </div>
+</div>
+
+       
+<div  class="col-md-10" id="d" >
+    </div>
+     @*</div>
+     </div>*@
+<script>
+    function fun() { $("#d").load("/Product//upload") }
+    function fan() { $("#d").load("/Admin/SignUp") }
+    $(document).ready(function () {
+        
+        //$("#d").load("/Product/prdct
+       
+        
+    });
+   
+    
+</script>
+<script></script>
